@@ -9,8 +9,8 @@
       content="FLARE is a Unity racing game with AI-filled grids, custom track creation, and online racing features."
     >
     <title>FLARE — Find your racing line</title>
-    <link rel="preconnect" href="https://drive.google.com">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -109,20 +109,28 @@
               <div class="section-kicker"><span>03</span> TAKE A LOOK</div>
               <h2>See it <span>in motion.</span></h2>
             </div>
-            <a class="text-link preview-open" href="https://drive.google.com/file/d/1_ncALJsiqvWSwXMORvhPA9G4sVv0gLMx/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              Open preview in Drive <span aria-hidden="true">↗</span>
-            </a>
           </div>
           <div class="video-frame">
-            <iframe
-              src="https://drive.google.com/file/d/1_ncALJsiqvWSwXMORvhPA9G4sVv0gLMx/preview"
-              title="FLARE game preview"
-              allow="autoplay"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <video
+              id="preview-video"
+              src="assets/flare-preview.mp4"
+              aria-label="FLARE game preview"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
           </div>
+          <div class="video-controls" aria-label="Preview video controls">
+            <button class="video-control" id="video-play-toggle" type="button" aria-label="Pause preview">
+              Pause preview
+            </button>
+            <button class="video-control" id="video-mute-toggle" type="button" aria-label="Unmute preview">
+              Unmute preview
+            </button>
+          </div>
+          <p class="video-status" id="video-status" role="status" hidden></p>
           <div class="download-banner">
             <div>
               <p class="eyebrow">YOUR NEXT LAP STARTS HERE</p>

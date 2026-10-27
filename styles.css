@@ -444,10 +444,6 @@ h2 {
   margin-top: 25px;
 }
 
-.preview-open {
-  margin-bottom: 7px;
-}
-
 .video-frame {
   aspect-ratio: 16 / 9;
   position: relative;
@@ -456,12 +452,44 @@ h2 {
   border: 1px solid rgba(240, 240, 233, 0.13);
 }
 
-.video-frame iframe {
+.video-frame video {
   width: 100%;
   height: 100%;
   position: absolute;
   inset: 0;
-  border: 0;
+  object-fit: contain;
+}
+
+.video-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.video-control {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(240, 240, 233, 0.24);
+  background: transparent;
+  color: var(--paper);
+  font: 500 11px var(--body);
+  cursor: pointer;
+}
+
+.video-control:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+.video-control:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+.video-status {
+  margin: 10px 0 0;
+  color: #ff9a83;
+  font-size: 11px;
 }
 
 .download-banner {
